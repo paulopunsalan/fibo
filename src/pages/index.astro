@@ -1,0 +1,68 @@
+---
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>a flower i call fibo</title>
+
+		<style>
+			body {
+				position: absolute;
+				background-color: black;
+
+				margin: 0;
+
+				width: 100vw;
+				height: 100vh;
+			}
+			canvas {
+				position: absolute;
+
+				top: 8px;
+				left: 60px;
+
+				transform: translate(-50%, -50%);
+			}
+
+			div.stem {
+				background-image: url("/fibo/stem.png");
+				background-size: contain;
+				background-position: bottom;
+
+				width: 198.5px;
+				height: 430.5px;
+
+				position: fixed;
+				bottom: 0;
+				left: calc(50% + 48px);
+				transform: translateX(-50%);
+
+				transform-origin: center bottom;
+
+				animation: sway alternate 2s ease-in-out infinite;
+
+				filter: brightness(200%);
+			}
+
+			@keyframes sway {
+				0% {
+					transform: translateX(-50%) rotate(2deg);
+				}
+				100% {
+					transform: translateX(-50%) rotate(-2deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="stem">
+			<canvas width="500" height="500" id="fibo"></canvas>
+		</div>
+
+		<script src="../js/fibo.js"></script>
+	</body>
+</html>
