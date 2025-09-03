@@ -46,12 +46,12 @@ const mod1 = document.getElementById("mod1");
 const mod2 = document.getElementById("mod2");
 
 mod1.addEventListener("input", () => {
-    fiboMod1 = mod1.value;
+    fiboMod1 = parseFloat(mod1.value);
     drawFibo();
 });
 
 mod2.addEventListener("input", () => {
-    fiboMod2 = mod2.value;
+    fiboMod2 = parseFloat(mod2.value);
     drawFibo();
 });
 
